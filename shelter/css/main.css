@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+  }
+header {
+    background: url('../assets/img/header_background.png') no-repeat center;
+}
+.container {
+    display: flex;
+    width: 1200px;
+    height: 60px;
+    margin: auto;
+}
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
