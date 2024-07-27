@@ -418,3 +418,138 @@ h4 {
     letter-spacing: 1px;
     text-align: center;
 }
+.donation {
+    height: 462px;
+    background-color: #F6F6F6;
+}
+.donation-content{
+    display: flex;
+    width: 915px;
+    height: 282px;
+    padding-top: 80px;
+    padding-left: 183;
+}
+.donation-tittle {
+    width: 300px;
+    height: 90px;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    color: #545454;
+}
+.donation-dog {
+    width: 505px;
+    height: 261px;
+    margin-top: 10px;
+    margin-left: 183px;
+}
+.donation-content-block {
+    margin-left: 31px;
+}
+h5 {
+    width: 307px;
+    height: 17px;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16.5px;
+    color: #545454;
+    letter-spacing: 0.87px;
+    margin-top: 21px;
+    
+}
+.credit-card {
+    display: flex;
+    width: 349px;
+    height: 43px;
+    border-radius: 9px;
+    background-color: #F1CDB3;
+    margin-top: -7px;
+}
+.card-icon {
+    margin-left: 14px;
+    margin-top: 10px;
+}
+#card-number {
+    margin-left: 15px;
+    margin-top: 10px;
+    color: #545454;
+}
+.legal-info {
+    width: 380px;
+    height: 72px;
+    font-family: Arial;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+    margin-top: 20px;
+}
+footer {
+    height: 350px;
+    background: url('../assets/img/footer_background.png') no-repeat center;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 310px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    height: 234px;
+    margin-top: 16px;
+}
+.footer-location {
+    display: flex;
+    flex-direction: column;
+    width: 302px;
+    height: 243px;
+    margin-top: 16px;
+    margin-left: 160px;
+}
+.footer-title-text {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+.footer-item-text {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #F1CDB3;
+    margin: 0;
+    margin-left: 20px;
+}
+.footer-puppy {
+    width: 300px;
+    height: 310px;
+    margin-left: 160px;
+}
+.footer-item {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+#location {
+    width: 260px;
+    height: 46px;
+    margin-left: 9px;
+    margin-top: -5px;
+}
+.locatin-icon {
+    margin-top: -10px;
+}
+#location-2 {
+    margin-top: -6px;
+}
