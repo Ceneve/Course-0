@@ -216,11 +216,7 @@ h3 {
     letter-spacing: 0px;
     text-indent: 29px;
     letter-spacing: 2px;
-}
-.pets-title-text-second {
-    margin-top: 0px;
     white-space: nowrap;
-    text-indent: 0px;
 }
 .pets-slider {
     display: flex;
@@ -328,18 +324,9 @@ h3 {
     height: 90px;
     margin-left: 446px;
 }
-.help-title-text{
-    font-family: Georgia;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 45.5px;
-    letter-spacing: 1px;
-}
-.help-title-text-second {
-    margin-top: 0px;
-    white-space: nowrap;
-    text-indent: 0px;
-    text-indent: 60px;
+#help-title-text{
+    text-align: center;
+    margin-left: -30px;
 }
 .help-list {
     display: flex;
