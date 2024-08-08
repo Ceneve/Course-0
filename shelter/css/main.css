@@ -459,7 +459,7 @@ h3 {
 .help-content {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    max-width: 1200px;
     height: 431px;
     padding-left: 40px;
     padding-right: 40px;
@@ -479,15 +479,12 @@ h3 {
     display: flex;
     gap: 55px 120px;
     flex-wrap: wrap;
-    width: 1200px;
+    max-width: 1200px;
     padding-top: 60px;
     padding-bottom: 100px;
     margin-left: 87px;
 }
 #pet-item-6 {
-    margin-left: 84px;
-}
-.help-list:nth-child(6) {
     margin-left: 84px;
 }
 .pet-item {
@@ -511,6 +508,25 @@ h4 {
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: center;
+}
+@media (max-width:1260px) {
+    .help {
+        height: 779px;
+    }
+    .help-title {
+        margin-left: 190px;
+    }
+    .help-list {
+        min-width: 630px;
+        margin-left: 29px;
+        gap: 55px 60px;
+    }
+    .pet-item {
+        width: 170px;
+    }
+    #pet-item-6 {
+        margin-left: 0;
+    }
 }
 .donation {
     height: 462px;
