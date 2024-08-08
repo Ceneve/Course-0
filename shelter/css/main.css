@@ -4,25 +4,26 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    max-width: 1280px;
     margin: auto;
   }
 header {
-    height: 908px;
+    min-height: 908px;
+    max-height: 1165px;
     background: url('../assets/img/header_background.png') no-repeat center, url('../assets/img/transparent.png') bottom right repeat;
+    background-size: cover;
 }
 .container {
     display: flex;
-    width: 1200px;
+    justify-content: space-between;
+    max-width: 1200px;
     height: 60px;
     margin-top: 10px;
-    margin-bottom: 818;
     margin-left: 40px;
     margin-right: 40px;
 }
 .logo {
     display: flex;
-    flex-wrap: wrap;
     width: 184px;
     height: 60px;
 }
@@ -58,7 +59,6 @@ h1 {
     width: 443px;
     height: 27px;
     padding-top: 16px;
-    padding-left: 572px;
     padding-bottom: 17px;
     margin-top: 4px;
 }
@@ -95,8 +95,10 @@ h1 {
 }
 .start-screen {
     display: flex;
-    width: 1200px;
-    height: 728px;
+    max-width: 1200px;
+    min-width: 300px;
+    max-height: 728px;
+    min-height: 673px;
     padding-top: 110px;
     padding-left: 40px;
     padding-right: 40px;
@@ -104,11 +106,9 @@ h1 {
 .start-screen-content {
     display: flex;
     flex-direction: column;
-    width: 460px;
+    max-width: 460px;
     height: 322px;
-    padding-top: 163px;
     padding-right: 40px;
-    padding-bottom: 243px;
 }
 .heading {
     display: flex;
@@ -138,6 +138,55 @@ h2 {
     line-height: 24px;
     color: #CDCDCD;
     padding-bottom: 27px;
+}
+.puppy_header {
+    max-width: 100%;
+}
+@media (max-width:1260px) {
+    header {
+        height: 1165px;
+    }
+    .logo {
+        margin-left: -10px;
+    }
+    .about-item {
+        margin-left: 10px;
+    }
+    .nav-item {
+        margin-left: 36px;
+    }
+    .start-screen {
+        flex-direction: column;
+        margin-top: 81px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+    }
+    .start-screen-content {
+        margin-left: 153px;
+        max-width: 1260px;
+        padding-right: 145px;
+    }
+    .subheading {
+        max-width: 1100px;
+        min-width: 460px;
+        margin-left: 1px;
+    }
+    .puppy-block {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .puppy-header {
+        width: 569px;
+        height: 593px;
+        margin-top: 102px;
+        margin-right: 30px;
+    }
+    .button {
+        margin-left: 128px;
+    }
+
 }
 .button {
     width: 207px;
