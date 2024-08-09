@@ -529,18 +529,18 @@ h4 {
     }
 }
 .donation {
-    height: 462px;
+    min-height: 462px;
     background-color: #F6F6F6;
 }
 .donation-content{
     display: flex;
-    width: 915px;
+    max-width: 915px;
     height: 282px;
     padding-top: 80px;
     padding-left: 183;
 }
 .donation-tittle {
-    width: 300px;
+    max-width: 300px;
     height: 90px;
     font-family: Georgia;
     font-weight: 400;
@@ -591,8 +591,8 @@ h5 {
     text-decoration: none;
 }
 .legal-info {
-    width: 380px;
-    height: 72px;
+    min-width: 380px;
+    min-height: 72px;
     font-family: Arial;
     font-weight: 400;
     font-style: italic;
@@ -601,14 +601,37 @@ h5 {
     color: #B2B2B2;
     margin-top: 20px;
 }
+@media (max-width:1260px) {
+    .donation {
+        min-height: 783px;
+    }
+    .donation-content {
+        flex-direction: column-reverse;
+        width: auto;
+        height: auto;
+        margin-left: 164.5px;
+    }
+    .legal-info {
+        width: auto;
+        max-width: 1200px;
+        min-width: 380px;
+        padding-right: 200px;
+    }
+    .donation-dog {
+        margin-left: -31px;
+        margin-top: 50px;
+    }
+}
 footer {
-    height: 350px;
+    min-height: 350px;
+    max-height: 639px;
     background: url('../assets/img/footer_background.png') no-repeat center;
+    background-size: cover;
 }
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    width: 1200px;
+    max-width: 1200px;
     height: 310px;
     margin-top: 40px;
     margin-left: 40px;
@@ -682,4 +705,20 @@ footer {
 #location-2 {
     margin-left: 19px;
     margin-top: -10px;
+}
+@media (max-width:1260px) {
+    footer {
+        height: 639px;
+    }
+    .footer-content {
+        margin-top: 15px;
+        margin-left: 64px;
+    }
+    .footer-location {
+        margin-left: 60px;
+    }
+    .footer-puppy {
+        margin-top: 51px;
+        margin-left: 170px;
+    }
 }
