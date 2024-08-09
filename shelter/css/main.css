@@ -8,7 +8,7 @@ body {
     margin: auto;
   }
 header {
-    min-height: 908px;
+    min-height: 823px;
     max-height: 1165px;
     background: url('../assets/img/header_background.png') no-repeat center, url('../assets/img/transparent.png') bottom right repeat;
     background-size: cover;
@@ -92,6 +92,11 @@ h1 {
 }
 .nav-link:hover {
     color: #FAFAFA;
+}
+.burger {
+    display: none;
+    margin-top: 20px;
+    margin-left: 66px;
 }
 .start-screen {
     display: flex;
@@ -218,6 +223,58 @@ h2 {
         margin-left: 128px;
     }
 }
+@media (max-width:767px) {
+    header {
+        height: 823px;
+    }
+    .logo {
+        margin-left: -20px;
+    }
+    .about-item {
+        display: none;
+    }
+    .nav-item {
+        display: none;
+    }
+    .navbar {
+        justify-content: flex-end;
+    }
+    .burger {
+        display: block;
+    }
+    .start-screen-content {
+        margin-left: 0px;
+    }
+    .heading {
+        width: 300px;
+        height: 64px;
+        margin-left: -8px;
+    }
+    h2 {
+        width: 300px;
+        height: 64px;
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        line-height: 32.5px;
+        margin-left: 40px;
+    }
+    .subheading {
+        min-width: 300px;
+        margin-left: 11px;
+        text-align: center;
+    }
+    .button {
+        margin-top: 20px;
+        margin-left: 56px;
+    }
+    .puppy-header {
+        width: 260px;
+        height: 271.77px;
+        margin-top: 77px;
+        margin-right: 10px;
+    }
+}
 .about {
     min-height: 588px;
     max-height: 1048px;
@@ -289,8 +346,38 @@ h3 {
         padding-right: 170px;
     }
 }
+@media (max-width:760px) {
+    .about {
+        height: 974px;
+    }
+    h3 {
+        width: 250px;
+        height: 64px;
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        margin-left: 10px;
+    }
+    .about-content{
+        margin-top: 41px;
+    }
+    .about-shelter {
+        margin-left: 169px;
+        padding-bottom: 80px;
+    }
+    .about-subheading {
+        min-width: 270px;
+        text-align: justify;
+    }
+    .pets-puppy {
+        width: 260px;
+        height: 353.6px;
+        margin-top: 78px;
+    }
+}
 .pets {
-    min-height: 877px;
+    height: 877px;
     background-color: #F6F6F6;
 }
 .pets-content {
@@ -452,6 +539,54 @@ h3 {
         margin-left: 220px;
     }
 }
+@media (max-width:760px) {
+    #pet-card2 {
+        display: none;
+    }
+}
+@media (max-width:510px) {
+    .pets {
+        height: 791px;
+    }
+    .pets-content {
+        margin-left: 0;
+    }
+    .pets-title {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    #pets-title-text {
+        margin-left: 20px;
+        letter-spacing: 0.06em;
+    }
+
+    #friend > div > div.pets-slider > div.pet-cards {
+        order: 1;
+        padding-bottom: 18px;
+    }
+
+    .pets-slider {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
+        margin-top: 41px;
+        margin-right: 27px;
+        margin-left: 35.5px;
+
+    }
+    #left-button {
+        margin-left: 30px;
+        order: 1;
+        margin-bottom: -51px;
+    }
+    #right-button {
+        margin-bottom: -52px;
+    }
+    .button-pets {
+        margin-top: 90px;
+        margin-left: 25px;
+    }
+}
 .help {
     height: 611px;
     background-color: #FFFFFF;
@@ -526,6 +661,40 @@ h4 {
     }
     #pet-item-6 {
         margin-left: 0;
+    }
+}
+@media (max-width:760px) {
+    .help {
+        height: 745px;
+    }
+    .help-content {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .help-title {
+        margin-top: 41px;
+        margin-left: 65px;
+    }
+    .help-list {
+        min-width: 290px;
+        margin-left: 15px;
+        gap: 30px 30px;
+        padding-top: 43px;
+    }
+    .pet-item {
+        width: 130px;
+        height: 87px;
+    }
+    #pet-item {
+        margin-top: -8px;
+        font-size: 15px;
+        line-height: 16.5px;
+    }
+    .pet-icon {
+        width: 50px;
+        height: 50px;
     }
 }
 .donation {
