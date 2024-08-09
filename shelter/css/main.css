@@ -491,8 +491,11 @@ h3 {
     margin-top: 60px;
     transition: background-color 0.3s;
 }
+.pets-link {
+    text-decoration: none;
+    color: #292929;
+}
 .button-pets:hover {
-    cursor: pointer;
     background-color: #FDDCC4;
 }
 .button-pets-text {
