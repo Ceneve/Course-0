@@ -2,7 +2,7 @@ const button = document.querySelector('.burger-button');
 const content = document.querySelector('.burger-content');
 const link = document.querySelector('.nav-item-burger');
 const overlay = document.querySelector('.burger-overlay');
-const aboutLink = document.querySelector('.about-item-burger');
+const inactiveLink = document.querySelector('.inactive-item-burger');
 const firstLink = document.getElementById('nav-item-burger-2');
 const secondLink = document.getElementById('nav-item-burger-3');
 const body = document.body;
@@ -27,8 +27,7 @@ function hideBurgerMenu(){
 }
 
 overlay.addEventListener('click', () => hideBurgerMenu());
-aboutLink.addEventListener('click', () => hideBurgerMenu());
+inactiveLink.addEventListener('click', () => hideBurgerMenu());
 firstLink.addEventListener('click', () => hideBurgerMenu());
 secondLink.addEventListener('click', () => hideBurgerMenu());
-
 })

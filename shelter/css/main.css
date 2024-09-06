@@ -135,7 +135,7 @@ h1 {
     margin-top: 248px;
     margin-left: 39px;
 }
-.about-item-burger {
+.inactive-item-burger {
     font-family: Arial;
     font-weight: 400;
     font-size: 32px;
@@ -329,9 +329,9 @@ h2 {
         width: 300px;
         height: 64px;
         margin-left: -8px;
+        padding-right: 0px;
     }
     h2 {
-        width: 300px;
         height: 64px;
         font-size: 25px;
         text-align: center;
@@ -452,6 +452,8 @@ h3 {
     .about-subheading {
         min-width: 270px;
         text-align: justify;
+        padding-right: 0px;
+        margin-right: 170px;
     }
     .pets-puppy {
         width: 260px;
@@ -1035,7 +1037,7 @@ footer {
     .footer-puppy-block {
         display: flex;
         justify-content: flex-end;
-        width: 1200px;
+        max-width: 1200px;
     }
     .footer-puppy {
         margin-top: 51px;
@@ -1091,5 +1093,6 @@ footer {
         height: 269px;
         margin-top: 16px;
         margin-left: 29px;
+        padding-right: 0px;
     }
 }
