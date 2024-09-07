@@ -84,53 +84,128 @@
             Our friends who<br> are looking for a house
           </h3>
         </div>
-        <div class="pets-slider">
-          <div class="button-arrow" id="left-button">
+        <div class="carousel-content">
+          <div class="button-arrow" id="left-button" onclick="leftButtonClick()">
             <svg class="arrow" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
             </svg>            
           </div>
-          <div class="pet-cards">
-            <div class="pet-card">
-              <div class="pet-img">
-                <img src="./assets/img/card_cat_1.png" alt="card cat 1">
-              </div>
-              <div class="pet-name">
-                <p>Katrine</p>
-              </div>
-              <div class="card-button">
-                <p class="button-text-card">Learn more</p>
+            <div class="carousel" id="carousel">
+              <div class="pets-slider">
+                <div class="pet-cards-left">
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Sophia.png" alt="Sophia">
+                    </div>
+                    <div class="pet-name">
+                      <p>Sophia</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Timmy.png" alt="Timmy">
+                    </div>
+                    <div class="pet-name">
+                      <p>Timmy</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Charly.png" alt="Charly">
+                    </div>
+                    <div class="pet-name">
+                      <p>Charly</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="pet-cards-mid">
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Katrine.png" alt="Katrine">
+                    </div>
+                    <div class="pet-name">
+                      <p>Katrine</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Jennifer.png" alt="Jennifer">
+                    </div>
+                    <div class="pet-name">
+                      <p>Jennifer</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Woody.png" alt="Woody">
+                    </div>
+                    <div class="pet-name">
+                      <p>Woody</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                </div>
+                </div>
+                <div class="pet-cards-right">
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Scarlett.png" alt="Scarlett">
+                    </div>
+                    <div class="pet-name">
+                      <p>Scarlett</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Freddie.png" alt="Freddie">
+                    </div>
+                    <div class="pet-name">
+                      <p>Freddie</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
+                  <div class="pet-card">
+                    <div class="pet-img">
+                      <img class="pet-picture" src="./assets/img/Timmy.png" alt="Timmy">
+                    </div>
+                    <div class="pet-name">
+                      <p>Timmy</p>
+                    </div>
+                    <div class="card-button">
+                      <p class="button-text-card">Learn more</p>
+                    </div>
+                  </div>
               </div>
             </div>
-            <div class="pet-card" id="pet-card2">
-              <div class="pet-img">
-                <img src="./assets/img/card_dog_1.png" alt="card dog 1">
-              </div>
-              <div class="pet-name">
-                <p>Jennifer</p>
-              </div>
-              <div class="card-button">
-                <p class="button-text-card">Learn more</p>
-              </div>
             </div>
-            <div class="pet-card" id="pet-card3">
-              <div class="pet-img">
-                <img src="./assets/img/card_dog_2.png" alt="card dog 2">
-              </div>
-              <div class="pet-name">
-                <p>Woody</p>
-              </div>
-              <div class="card-button">
-                <p class="button-text-card">Learn more</p>
-              </div>
-          </div>
-        </div>
-        <div class="button-arrow" id="right-button">
+        <div class="button-arrow" id="right-button" onclick="rightButtonClick()">
           <svg class="arrow" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929"/>
             </svg>                  
         </div>
-      </div>
+        </div>
+
       <div class="button-pets">
         <a class="pets-link" href="./pets.html"><p class="button-pets-text">Get to know the rest</p></a>
       </div>
