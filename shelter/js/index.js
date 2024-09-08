@@ -145,3 +145,28 @@ petsSlider.addEventListener('animationend', (animation) => {
     }
     
 })
+
+let petsCards = document.querySelectorAll('.pet-card');
+let petsCardsArray = Array.from(petsCards);
+let popup = document.querySelector(".popup");
+let closeButton = document.querySelector('.close-button');
+const popupOverlay = document.querySelector('.popup-overlay');
+
+petsCardsArray.forEach(item => { 
+    item.addEventListener('click', () => {
+        popup.classList.remove('popup')
+        popup.classList.add('popup-active')
+        popupOverlay.classList.toggle('active');
+        body.classList.toggle('noscroll');
+     }) 
+})
+
+function hidePopup(){
+    popupOverlay.classList.remove('active');
+    popup.classList.remove('popup-active');
+    popup.classList.add('popup');
+    body.classList.remove('noscroll');
+}
+
+popupOverlay.addEventListener('click', () => hidePopup());
+closeButton.addEventListener('click', () => hidePopup());
