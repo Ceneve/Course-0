@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pets</title>
     <link rel="stylesheet" href="./css/pets.css">
-    <script defer src="./js/index.js"></script>
+    <script defer src="./js/pets.js"></script>
     <link rel="icon" href="./assets/img/favicon.png">
 </head>
 <body>
@@ -45,10 +45,41 @@
                 </h3>
               </div>
         </div>
+        <div class="popup-overlay"></div>
+        <div class="popup">
+          <div class="close-button">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z" fill="#292929"/>
+              </svg>          
+          </div>
+          <div class="popup-card">
+            <img class="popup-pet-picture" src="./assets/img/Jennifer.png" alt="Jennifer">
+            <div class="popup-card-content">
+              <div class="popup-logo">
+                <h3 class="popup-logo-title">Jennifer</h3>
+                <p class="popup-logo-subtitle">Dog - Labrador</p>
+              </div>
+              <div class="popup-description">
+                <p class="popup-description-text">
+                Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. 
+                This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.
+                </p>
+            </div>
+            <div class="popup-list">
+              <ul>
+                <li><h5><b>Age:</b> 2 months</h5></li>
+                <li><h5><b>Inoculations:</b> none</h5</li>
+                <li><h5><b>Diseases:</b> none</h5></li>
+                <li><h5><b>Parasites:</b> none</h5></li>
+              </ul>  
+            </div>
+            </div>
+          </div>
+        </div>
         <div class="cards-container">
             <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Katrine.png" alt="Katrine">
+                  <img class="pet-picture" src="./assets/img/Katrine.png" alt="Katrine">
                 </div>
                 <div class="pet-name">
                   <p>Katrine</p>
@@ -57,9 +88,9 @@
                   <p class="button-text">Learn more</p>
                 </div>
             </div>
-            <div class="pet-card-margin">
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Jennifer.png" alt="Jennifer">
+                  <img class="pet-picture" src="./assets/img/Jennifer.png" alt="Jennifer">
                 </div>
                 <div class="pet-name">
                   <p>Jennifer</p>
@@ -68,9 +99,9 @@
                   <p class="button-text">Learn more</p>
                 </div>
               </div>
-            <div class="pet-card-margin">
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Woody.png" alt="Woody">
+                  <img class="pet-picture" src="./assets/img/Woody.png" alt="Woody">
                 </div>
                 <div class="pet-name">
                   <p>Woody</p>
@@ -79,9 +110,9 @@
                   <p class="button-text">Learn more</p>
                 </div>
             </div>
-            <div class="pet-card-margin">
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img class="pet-img-big" src="./assets/img/Sophia.png" alt="Sophia">
+                  <img class="pet-picture" src="./assets/img/Sophia.png" alt="Sophia">
                 </div>
                 <div class="pet-name">
                   <p>Sophia</p>
@@ -92,7 +123,7 @@
             </div>
             <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Timmy.png" alt="Timmy">
+                  <img class="pet-picture" src="./assets/img/Timmy.png" alt="Timmy">
                 </div>
                 <div class="pet-name">
                   <p>Timmy</p>
@@ -101,20 +132,21 @@
                   <p class="button-text">Learn more</p>
                 </div>
             </div>
-            <div class="pet-card-margin">
+            
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Charly.png" alt="Charly">
+                  <img class="pet-picture" src="./assets/img/Charly.png" alt="Charly">
                 </div>
                 <div class="pet-name">
                   <p>Charly</p>
                 </div>
-                <div class="card-button">
+                <div  class="card-button">
                   <p class="button-text">Learn more</p>
                 </div>
             </div>
-            <div class="pet-card-margin">
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Scarlett.png" alt="Scarlett">
+                  <img class="pet-picture" src="./assets/img/Scarlett.png" alt="Scarlett">
                 </div>
                 <div class="pet-name">
                   <p>Scarlett</p>
@@ -123,9 +155,9 @@
                   <p class="button-text">Learn more</p>
                 </div>
             </div>
-            <div class="pet-card-margin">
+            <div class="pet-card">
                 <div class="pet-img">
-                  <img src="./assets/img/Freddie.png" alt="Freddie">
+                  <img class="pet-picture" src="./assets/img/Freddie.png" alt="Freddie">
                 </div>
                 <div class="pet-name">
                   <p>Freddie</p>
@@ -136,19 +168,19 @@
             </div>
         </div>
         <div class="navigation">
-            <div class="button-arrow-inactive">  
-                <h4 class="arrow-inactive">&lt;&lt;</h4>      
+            <div class="button-arrow-inactive" id="button-double-arrow-left">  
+                <h4 class="arrow-inactive" id ="doube-arrow-active-left">&lt;&lt;</h4>      
             </div>
-            <div class="button-arrow-inactive" id="button-arrow-inactive-margin">  
+            <div class="button-arrow-inactive" id="button-arrow-left">  
                 <h4 class="arrow-inactive" id="one-arrow">&lt;</h4>      
             </div>
             <div class="button-number">  
                 <h4 class="number">1</h4>      
             </div>
-            <div class="button-arrow-active">  
+            <div class="button-arrow-right">  
                 <h4 class="arrow-active" id="arrow-active-margin-1">></h4>      
             </div>
-            <div class="button-arrow-active">  
+            <div class="button-double-arrow-right">  
                 <h4 class="arrow-active" id="arrow-active-margin-2">>></h4>      
             </div>
         </div>
@@ -212,5 +244,6 @@
         </div>
       </div>
     </footer>
+    
 </body>
 </html>

@@ -34,8 +34,8 @@ secondLink.addEventListener('click', () => hideBurgerMenu());
 // slider
 const buttonLeft = document.querySelector("#left-button");
 const buttonRight = document.querySelector("#right-button");
-const petsSlider = document.querySelector(".pets-slider")
-let midElements = document.querySelector('.pet-cards-mid');
+const petsSlider = document.querySelector(".pets-slider");
+let petMidElements = document.querySelector('.pet-cards-mid');
 let leftElements = document.querySelector('.pet-cards-left');
 let rightElements = document.querySelector('.pet-cards-right');
 
@@ -43,23 +43,24 @@ let rightElements = document.querySelector('.pet-cards-right');
 let cards = document.querySelectorAll('.pet-card');
 let cardsArray = Array.from(cards);
 // let cardsArrayMid = Array.from(document.querySelector(".pet-cards-mid").children);
-let cardsArrayMid = Array.from(midElements);
+let cardsArrayMid = Array.from(petMidElements);
 let difference = cardsArray.filter(x => !cardsArrayMid.includes(x));
 
-const rand = () =>{
 
-    function shuffle(arr) {
-        let currentIndex = arr.length;
-      
-        while (currentIndex != 0) {
-      
-          let randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          [arr[currentIndex], arr[randomIndex]] = [
-            arr[randomIndex], arr[currentIndex]];
-        };
-      }
+function shuffle(arr) {
+    let currentIndex = arr.length;
+  
+    while (currentIndex != 0) {
+  
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex], arr[currentIndex]];
+    };
+  }
+
+const rand = () =>{
 
     const randomCards = (arr) => {
         shuffle(difference);
@@ -113,7 +114,7 @@ const rand = () =>{
 // let randomizedCardsLeft = rand();
 // let randomizedCardsRight = rand();
 
-midElements.innerHTML = rand()
+petMidElements.innerHTML = rand()
 
 buttonLeft.addEventListener('click', () => {
     petsSlider.classList.add('animation-left-click');
