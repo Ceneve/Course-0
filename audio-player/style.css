@@ -1,0 +1,28 @@
+.audio-player {
+    width: 300px;
+    height: 200px;
+}
+.start {
+    display: block;
+}
+#start-button {
+    width: 30px;
+    height: 30px;
+}
+#stop-button {
+    width: 30px;
+    height: 30px;
+}
+.stop {
+    display: none;
+}
+.bar {
+    height: 10px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: blue;
+}
