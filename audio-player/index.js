@@ -11,11 +11,13 @@ const backwardButton = document.querySelector(".backward-button");
 const artistName = document.querySelector(".artist-name");
 const songName = document.querySelector(".song-name");
 let songNumber = document.querySelector(".song-number");
+const trackSlider = document.getElementById("track-slider");
+
 let songsArray = [
-    ["./assets/audio/beyonce.mp3","Beyonce","Don't Hurt Yourself","./assets/img/lemonade.png"],
-    ["./assets/audio/dontstartnow.mp3","Dua Lipa","Don't Start Now","./assets/img/dontstartnow.png"]
+    ["./assets/audio/beyonce.mp3", "Beyonce", "Don't Hurt Yourself", "./assets/img/lemonade.png"],
+    ["./assets/audio/dontstartnow.mp3", "Dua Lipa", "Don't Start Now", "./assets/img/dontstartnow.png"]
 ];
-function songContent(id){
+function songContent(id) {
     audio.src = songsArray[id][0];
     artistName.innerHTML = songsArray[id][1];
     songName.innerHTML = songsArray[id][2];
@@ -24,8 +26,9 @@ function songContent(id){
 songContent(0);
 let count = 0;
 forwardButton.addEventListener("click", () => {
+
     count += 1;
-    if(count >= songsArray.length){
+    if(count >= songsArray.length) {
         count = 0
         songContent(count);
         audio.play();
@@ -42,7 +45,7 @@ backwardButton.addEventListener("click", () => {
     let songId;
     songId = Number(songNumber.innerHTML);
     songId -= 1;
-    if(songId < 0){
+    if(songId < 0) {
         songId = songsArray.length - 1;
         songContent(songId);
         audio.play();
@@ -68,18 +71,26 @@ playButton.addEventListener("click", () => {
         stopButton.style.display = "block";
     }
 });
-forwardButton.addEventListener("click", () => {
-});
+
+
 audio.addEventListener("timeupdate", () => {
-    const currentTime = audio.currentTime;
-    const duration = audio.duration;
-    const currentMinutes = Math.floor(currentTime / 60);
-    const currentSeconds = Math.floor(currentTime % 60);
-    
-    const totalMinutes = Math.floor(duration / 60);
-    const totalSeconds = Math.floor(duration % 60);
-    timer.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
-    songDuration.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`;
-    let progress = (currentTime / duration) * 100;
-    progressBar.style.width = `${progress}%`;
+    const currentTime = formatTimer(audio.currentTime);
+    const duration = formatTimer(audio.duration || 0);
+
+    timer.textContent = currentTime;
+    songDuration.textContent = duration;
+
+    const position = (audio.currentTime / audio.duration) * 100;
+    trackSlider.value = audio.duration ? position : 0;
 });
+
+trackSlider.addEventListener("input", function () {
+    let newPosition = (trackSlider.value / 100) * audio.duration;
+    audio.currentTime = newPosition;
+});
+
+function formatTimer(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+};

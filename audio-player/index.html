@@ -13,11 +13,10 @@
     <p class="song-name"></p>
     <P class="song-number"></P>
     <div class="audio-player">
-        <audio class="audio" src="">
-        </audio>
-    <div class="bar">
-        <div class="progress-bar"></div>
-    </div>
+        <audio class="audio" src=""></audio>
+        <div id="controls">
+            <input type="range" id="track-slider" min="0" max="100" value="0">
+        </div>
     <div class="timer">0:00</div>
     <div class="duration">0:00</div>
     <div class="play-button">
@@ -27,10 +26,10 @@
         <div class="stop"><img src="./assets/svg/pause.png" alt="pause" id="stop-button"></div>
     </div>
     <div class="backward-button">
-        <img src="./assets/svg/backward.png" alt="backward">
+        <img src="./assets/svg/backward.png" alt="backward" id="backward">
     </div>
     <div class="forward-button">
-        <img src="./assets/svg/forward.png" alt="forward">
+        <img src="./assets/svg/forward.png" alt="forward" id="forward">
     </div>    
     </div>
 </body>
