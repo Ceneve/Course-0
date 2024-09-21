@@ -1,4 +1,5 @@
 const audio = document.querySelector(".audio");
+const audioBackground = document.querySelector(".audio-background");
 const playButton = document.querySelector(".play-button");
 const startButton = document.querySelector(".start");
 const stopButton = document.querySelector(".stop");
@@ -14,13 +15,14 @@ let songNumber = document.querySelector(".song-number");
 const trackSlider = document.getElementById("track-slider");
 
 let songsArray = [
-    ["./assets/audio/beyonce.mp3", "Beyonce", "Don't Hurt Yourself", "./assets/img/lemonade.png"],
-    ["./assets/audio/dontstartnow.mp3", "Dua Lipa", "Don't Start Now", "./assets/img/dontstartnow.png"]
+    ["./assets/audio/beyonce.mp3", "Beyonce", "Don't Hurt Yourself", "url('./assets/img/lemonade.png')"],
+    ["./assets/audio/dontstartnow.mp3", "Dua Lipa", "Don't Start Now", "url('./assets/img/dontstartnow.png')"] 
 ];
 function songContent(id) {
     audio.src = songsArray[id][0];
     artistName.innerHTML = songsArray[id][1];
     songName.innerHTML = songsArray[id][2];
+    audioBackground.style.backgroundImage = songsArray[id][3];
     songNumber.innerHTML = id;
 }
 songContent(0);

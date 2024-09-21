@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,36 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="index.js"></script>
 </head>
+
 <body>
-    <p class="artist-name"></p>
-    <p class="song-name"></p>
-    <P class="song-number"></P>
+
     <div class="audio-player">
+        <div class="audio-background"></div>
+        <p class="artist-name"></p>
+        <p class="song-name"></p>
+        <P class="song-number"></P>
         <audio class="audio" src=""></audio>
+        </audio>
+        <div class="duration">0:00</div>
         <div id="controls">
             <input type="range" id="track-slider" min="0" max="100" value="0">
         </div>
-    <div class="timer">0:00</div>
-    <div class="duration">0:00</div>
-    <div class="play-button">
-        <div class="start">
-            <img src="./assets/svg/play.png" alt="play" id="start-button">
+        <div class="timer">0:00</div>
+        <div class="buttons">
+            <div class="play-button">
+                <div class="start">
+                    <img src="./assets/svg/play.png" alt="play" id="start-button">
+                </div>
+                <div class="stop"><img src="./assets/svg/pause.png" alt="pause" id="stop-button"></div>
+            </div>
+            <div class="backward-button">
+                <img src="./assets/svg/backward.png" alt="backward" id="backward">
+            </div>
+            <div class="forward-button">
+                <img src="./assets/svg/forward.png" alt="forward" id="forward">
+            </div>
         </div>
-        <div class="stop"><img src="./assets/svg/pause.png" alt="pause" id="stop-button"></div>
-    </div>
-    <div class="backward-button">
-        <img src="./assets/svg/backward.png" alt="backward" id="backward">
-    </div>
-    <div class="forward-button">
-        <img src="./assets/svg/forward.png" alt="forward" id="forward">
-    </div>    
     </div>
 </body>
+
 </html>
