@@ -16,6 +16,9 @@
 .stop {
     display: none;
 }
+.song-number {
+    display: none;
+}
 .bar {
     height: 10px;
     background-color: #ccc;
