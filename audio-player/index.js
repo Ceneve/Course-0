@@ -3,20 +3,23 @@ const audioBackground = document.querySelector(".audio-background");
 const playButton = document.querySelector(".play-button");
 const startButton = document.querySelector(".start");
 const stopButton = document.querySelector(".stop");
-const progressBar = document.querySelector(".progress-bar");
+const volume = document.querySelector(".volume");
 const timer = document.querySelector(".timer");
 const songDuration = document.querySelector(".duration");
 
 const forwardButton = document.querySelector(".forward-button");
 const backwardButton = document.querySelector(".backward-button");
+
 const artistName = document.querySelector(".artist-name");
 const songName = document.querySelector(".song-name");
 let songNumber = document.querySelector(".song-number");
-const trackSlider = document.getElementById("track-slider");
+
+
+const trackSlider = document.querySelector(".track-slider");
 
 let songsArray = [
     ["./assets/audio/beyonce.mp3", "Beyonce", "Don't Hurt Yourself", "url('./assets/img/lemonade.png')"],
-    ["./assets/audio/dontstartnow.mp3", "Dua Lipa", "Don't Start Now", "url('./assets/img/dontstartnow.png')"] 
+    ["./assets/audio/dontstartnow.mp3", "Dua Lipa", "Don't Start Now", "url('./assets/img/dontstartnow.png')"]
 ];
 function songContent(id) {
     audio.src = songsArray[id][0];
@@ -25,12 +28,14 @@ function songContent(id) {
     audioBackground.style.backgroundImage = songsArray[id][3];
     songNumber.innerHTML = id;
 }
-songContent(0);
-let count = 0;
-forwardButton.addEventListener("click", () => {
 
+songContent(0);
+
+let count = 0;
+
+forwardButton.addEventListener("click", () => {
     count += 1;
-    if(count >= songsArray.length) {
+    if (count >= songsArray.length) {
         count = 0
         songContent(count);
         audio.play();
@@ -42,12 +47,15 @@ forwardButton.addEventListener("click", () => {
         startButton.style.display = "none";
         stopButton.style.display = "block";
     }
+
 });
+
 backwardButton.addEventListener("click", () => {
     let songId;
     songId = Number(songNumber.innerHTML);
     songId -= 1;
-    if(songId < 0) {
+
+    if (songId < 0) {
         songId = songsArray.length - 1;
         songContent(songId);
         audio.play();
@@ -61,12 +69,14 @@ backwardButton.addEventListener("click", () => {
     }
 });
 
+
 playButton.addEventListener("click", () => {
+
     if (audio.paused === false) {
         audio.pause();
         stopButton.style.display = "none";
         startButton.style.display = "block";
-        
+
     } else {
         audio.play();
         startButton.style.display = "none";
@@ -74,6 +84,9 @@ playButton.addEventListener("click", () => {
     }
 });
 
+volume.addEventListener("input", () => {
+    audio.volume = volume.value;
+});
 
 audio.addEventListener("timeupdate", () => {
     const currentTime = formatTimer(audio.currentTime);
