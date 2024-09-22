@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+
+    <div class="audio-player">
+        <div class="audio-background"></div>
+        <p class="artist-name"></p>
+        <p class="song-name"></p>
+        <P class="song-number"></P>
+        <audio class="audio">
+        </audio>
+        <div class="duration">0:00</div>
+        <div id="controls">
+            <input type="range" class="track-slider" min="0" max="100" value="0">
+        </div>
+        <div class="timer">0:00</div>
+        <div class="buttons">
+            <div class="play-button">
+                <div class="start">
+                    <img src="./assets/svg/play.png" alt="play" id="start-button">
+                </div>
+                <div class="stop"><img src="./assets/svg/pause.png" alt="pause" id="stop-button"></div>
+            </div>
+            <div class="backward-button">
+                <img src="./assets/svg/backward.png" alt="backward" id="backward">
+            </div>
+            <div class="forward-button">
+                <img src="./assets/svg/forward.png" alt="forward" id="forward">
+            </div>
+            <img src="./assets/img/vol1.png" alt="vlome-down" id="vlome-down">
+            <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+            <img src="./assets/img/vol2.png" alt="vlome-up" id="vlome-up">
+        </div>
+    </div>
+    <footer>
+        <p class="text-box">Created by <a href="https://github.com/Ceneve"> Ceneve</a> in 2024</p>
+        <a href="https://rs.school/courses/javascript-preschool-ru"><img class="logo" src="./assets/img/rss-logo.svg"
+                alt="logo"></a>
+    </footer>
+</body>
+
+</html>
