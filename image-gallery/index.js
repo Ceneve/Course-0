@@ -25,9 +25,6 @@ imageGenerator(defaultSearchTerm);
 button.addEventListener("click", () => {
     content.innerHTML = "";
     let inputValue = input.value;
-    if (inputValue === "") {
-        footer.style.position = "absolute"
-    };
     imageGenerator(inputValue);
 });
 

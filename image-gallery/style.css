@@ -1,21 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(167, 230, 230, 0.863);
+}
 header {
     display: flex;
     justify-content: end;
-    border-bottom: solid 3px orange;
+    border-bottom: solid 5px orange;
+    height: 100px;
 }
-
+header input {
+    margin-top: 30px;
+    height: 25px;
+    border-radius: 1%;
+}
 header input::placeholder {
     color: rgb(187, 186, 186);
     font-size: 1em;
 }
-
+#search {
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 25px;
+}
 .content {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     flex-direction: row;
     margin: 5em auto;
     justify-content: center;
     gap: 40px;
+    min-height: 700px;
 }
 
 .content img {
@@ -23,14 +40,12 @@ header input::placeholder {
 }
 
 .footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
+    flex-shrink: 0;
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(167, 230, 230, 0.863);
+    border-top: solid 5px orange;
 }
 
 .text-box {
