@@ -2,18 +2,27 @@ header {
     display: flex;
     justify-content: end;
     border-bottom: solid 3px orange;
-
 }
-.content{
+
+header input::placeholder {
+    color: rgb(187, 186, 186);
+    font-size: 1em;
+}
+
+.content {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 5em auto;
+    justify-content: center;
+    gap: 40px;
 }
-/* .content img {
-    width: 400px;
-    height: 400px;
-} */
-footer {
+
+.content img {
+    width: 30%;
+}
+
+.footer {
     position: relative;
     left: 0;
     bottom: 0;
