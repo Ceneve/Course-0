@@ -1,5 +1,20 @@
+header {
+    display: flex;
+    justify-content: end;
+    border-bottom: solid 3px orange;
+
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+/* .content img {
+    width: 400px;
+    height: 400px;
+} */
 footer {
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
