@@ -1,14 +1,15 @@
 const mainScreen = document.querySelector('.main-screen');
-let score = document.getElementById('score');
-let lives = document.getElementById('lives');
 const stopButton = document.getElementById('stop-button');
 const startButton = document.getElementById('start-button');
-const balloonCount = 10;
-const balloonInterval = 1000;
+let score = document.getElementById('score');
+const timer = document.getElementById('timer');
+const balloonCount = 15;
+const balloonInterval = 500;
 let balloonDestroyed = 0;
-let liveCount = 10;
-
+let timerId;
+let timerCount = 0;
 let currentBalloons = 0;
+let gameCount = 1;
 
 function createBalloon() {
   let audioUrl = 'assets/audio/Balloon1.mp3'
@@ -19,68 +20,88 @@ function createBalloon() {
   balloon.style.height = '100px';
   balloon.style.cursor = 'pointer';
   balloon.style.top = `${Math.random() * -500}px`;
-  balloon.style.left = `${Math.random() * 700}px`;
+  balloon.style.left = `${Math.random() * (1467 - 540) + 540}px`;
  
   balloon.addEventListener('click', () => {
     balloon.remove();
     playAudio(audioUrl);
     currentBalloons--;
     balloonDestroyed++;
+    if (balloonDestroyed === balloonCount) {
+      stopCreateBalloons();
+    }
   });
 
   mainScreen.appendChild(balloon);
   score.innerText = balloonDestroyed * 100;
-  currentBalloons++;
 
 
   let top = parseInt(balloon.style.top);
   let speed = 2;
 
+
   function animate() {
     top -= speed;
     balloon.style.top = `${top}px`;
-
-    if (top === 0) {
-      liveCount--;
-      lives.innerText = liveCount;
-      if (liveCount === 0) {
-        stopCreateBalloons();
-      }
-    }
     if (top <= 0) {
       top = 500;
     }
-
     requestAnimationFrame(animate);
   }
-
   animate();
-
-  // currentBalloons++;
 }
 
 function createBalloons() {
-  if (currentBalloons < balloonCount) {
+  currentBalloons++;
+  if (currentBalloons <= balloonCount) {
     timeout = setTimeout(createBalloons, balloonInterval);
     createBalloon();
-    
   }
 }
 
-// createBalloons();
+
 
 function stopCreateBalloons() {
+  setLocalStorage();
   clearTimeout(timeout);
-  score.innerText = '0';
   mainScreen.innerHTML = '';
+  timer.innerHTML = '0s';
+  score.innerHTML = '0';
+  stopTimer();
   currentBalloons = 0;
-  balloonDestroyed = 0;
 }
 
-
 startButton.addEventListener('click', createBalloons);
+startButton.addEventListener('click', startTimer);
 stopButton.addEventListener('click', stopCreateBalloons);
 
 function playAudio(url) {
   new Audio(url).play();
+}
+
+function updateTimer() {
+  timerCount++;
+  timer.textContent = `${timerCount}s`;
+}
+
+function startTimer() {
+  timerId = setInterval(updateTimer, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerId);
+}
+
+
+function setLocalStorage() {
+  localStorage.setItem('Game ' + gameCount, timerCount);
+  gameCount++;
+  const storageKeys = Object.keys(localStorage);
+  const storageValues = storageKeys.map(key => ({ key, value: localStorage.getItem(key) }));
+  storageValues.sort((a, b) => a.value.localeCompare(b.value));
+  storageValues.forEach(({ key, value }) => localStorage.setItem(key, value));
+  if (storageKeys.length > 10) {
+    let lastKey = storageKeys[storageKeys.length - 1];
+    localStorage.removeItem(lastKey);
+  }
 }
