@@ -1,8 +1,8 @@
 const mainScreen = document.querySelector('.main-screen');
 const stopButton = document.getElementById('stop-button');
 const startButton = document.getElementById('start-button');
-let score = document.getElementById('score');
 const timer = document.getElementById('timer');
+const scoreBoard= document.getElementById('score-board');
 const balloonCount = 15;
 const balloonInterval = 500;
 let balloonDestroyed = 0;
@@ -25,15 +25,10 @@ function createBalloon() {
   balloon.addEventListener('click', () => {
     balloon.remove();
     playAudio(audioUrl);
-    currentBalloons--;
     balloonDestroyed++;
-    if (balloonDestroyed === balloonCount) {
-      stopCreateBalloons();
-    }
   });
 
   mainScreen.appendChild(balloon);
-  score.innerText = balloonDestroyed * 100;
 
 
   let top = parseInt(balloon.style.top);
@@ -52,23 +47,26 @@ function createBalloon() {
 }
 
 function createBalloons() {
-  currentBalloons++;
-  if (currentBalloons <= balloonCount) {
+  if (currentBalloons <= balloonCount && balloonDestroyed < balloonCount) {
     timeout = setTimeout(createBalloons, balloonInterval);
     createBalloon();
+  } else {
+    clearTimeout(timeout);
+    stopCreateBalloons();
   }
 }
-
-
 
 function stopCreateBalloons() {
   setLocalStorage();
   clearTimeout(timeout);
   mainScreen.innerHTML = '';
+  timerCount = 0;
   timer.innerHTML = '0s';
-  score.innerHTML = '0';
   stopTimer();
   currentBalloons = 0;
+  balloonDestroyed = 0;
+  scoreBoard.innerHTML = '';
+  getLocalStorage();
 }
 
 startButton.addEventListener('click', createBalloons);
@@ -92,16 +90,33 @@ function stopTimer() {
   clearInterval(timerId);
 }
 
-
+let lastItem = Object.keys(localStorage)[Object.keys(localStorage).length - 1];
 function setLocalStorage() {
-  localStorage.setItem('Game ' + gameCount, timerCount);
-  gameCount++;
-  const storageKeys = Object.keys(localStorage);
-  const storageValues = storageKeys.map(key => ({ key, value: localStorage.getItem(key) }));
-  storageValues.sort((a, b) => a.value.localeCompare(b.value));
-  storageValues.forEach(({ key, value }) => localStorage.setItem(key, value));
+  if (Object.keys(localStorage).length > 0) {
+    
+    let gameNumber = Number(lastItem[lastItem.length - 1]);
+    localStorage.setItem('Game ' + (gameNumber + gameCount), timerCount);
+    gameCount += 1;
+  } else{
+    localStorage.setItem('Game ' + '1', timerCount);
+  }
+    const storageKeys = Object.keys(localStorage);
+    const storageValues = storageKeys.map(key => ({ key, value: localStorage.getItem(key) }));
+    storageValues.sort((a, b) => a.value.localeCompare(b.value));
+    storageValues.forEach(({ key, value }) => localStorage.setItem(key, value));
   if (storageKeys.length > 10) {
     let lastKey = storageKeys[storageKeys.length - 1];
     localStorage.removeItem(lastKey);
   }
 }
+
+function getLocalStorage() {
+  let storageKeys = Object.keys(localStorage);
+  storageKeys.forEach(key => {
+    let keyValue = `${key}: ${localStorage.getItem(key)} seconds`;
+    let element = document.createElement('div');
+    element.textContent = keyValue;
+    scoreBoard.appendChild(element);
+  });
+}
+getLocalStorage();
