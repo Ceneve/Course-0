@@ -18,7 +18,6 @@ function createBalloon() {
   balloon.style.position = 'absolute';
   balloon.style.width = '100px';
   balloon.style.height = '100px';
-  balloon.style.cursor = 'pointer';
   balloon.style.top = `${Math.random() * -500}px`;
   balloon.style.left = `${Math.random() * (1467 - 540) + 540}px`;
  
@@ -65,7 +64,6 @@ function stopCreateBalloons() {
   stopTimer();
   currentBalloons = 0;
   balloonDestroyed = 0;
-  scoreBoard.innerHTML = '';
   getLocalStorage();
 }
 
@@ -101,9 +99,6 @@ function setLocalStorage() {
     localStorage.setItem('Game ' + '1', timerCount);
   }
     const storageKeys = Object.keys(localStorage);
-    const storageValues = storageKeys.map(key => ({ key, value: localStorage.getItem(key) }));
-    storageValues.sort((a, b) => a.value.localeCompare(b.value));
-    storageValues.forEach(({ key, value }) => localStorage.setItem(key, value));
   if (storageKeys.length > 10) {
     let lastKey = storageKeys[storageKeys.length - 1];
     localStorage.removeItem(lastKey);
@@ -111,6 +106,7 @@ function setLocalStorage() {
 }
 
 function getLocalStorage() {
+  scoreBoard.innerHTML = '';
   let storageKeys = Object.keys(localStorage);
   storageKeys.forEach(key => {
     let keyValue = `${key}: ${localStorage.getItem(key)} seconds`;
